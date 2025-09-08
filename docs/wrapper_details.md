@@ -16,77 +16,13 @@ The wrapper utilizes the `lupa` library to create a bridge between Python and a 
 -   **`djot.lua`**: The core Lua library for Djot parsing and rendering.
 -   **`src/djot_py/lua_modules/`**: A directory within the Python package that contains the `djot.lua` source files and its sub-modules. This ensures that the Lua runtime can find and load the necessary `djot.lua` components.
 
-## `Djot` Class API
+## API Reference
 
-The `Djot` class is the primary interface for interacting with `djot.lua`. It provides the following methods:
+For a detailed API reference of the `Djot` class, please refer to [API.md](API.md).
 
-### `__init__(self)`
+## Usage
 
-Initializes the `Djot` wrapper. This involves setting up the Lua runtime, configuring the Lua `package.path` to include the `lua_modules` directory, and loading the `djot.lua` module.
-
-### `parse(self, djot_text: str)`
-
-Parses Djot-formatted text and returns its Abstract Syntax Tree (AST).
-
--   **`djot_text`**: The input string containing Djot-formatted text.
--   **Returns**: A Lua table representing the AST of the input text.
-
-### `to_html(self, djot_text: str) -> str`
-
-Converts Djot-formatted text to HTML.
-
--   **`djot_text`**: The input string containing Djot-formatted text.
--   **Returns**: A string containing the HTML representation of the input Djot text.
-
-### `render_ast_pretty(self, djot_text: str) -> str`
-
-Renders the AST of Djot-formatted text in a human-readable, pretty-printed format.
-
--   **`djot_text`**: The input string containing Djot-formatted text.
--   **Returns**: A string containing the pretty-printed AST.
-
-### `render_ast_json(self, djot_text: str) -> str`
-
-Renders the AST of Djot-formatted text as a JSON string.
-
--   **`djot_text`**: The input string containing Djot-formatted text.
--   **Returns**: A string containing the JSON representation of the AST.
-
-### `parse_events(self, djot_text: str)`
-
-Parses Djot-formatted text and returns an iterator over parsing events. Each event is typically a tuple containing `(startpos, endpos, annotation)`.
-
--   **`djot_text`**: The input string containing Djot-formatted text.
--   **Returns**: A Python iterator that yields tuples representing parsing events.
-
-## Example Usage
-
-```python
-from djot_py.wrapper import Djot
-
-djot_wrapper = Djot()
-markdown_text = "*Hello*, **Djot**!\n\n- Item 1\n- Item 2"
-
-# Convert to HTML
-html_output = djot_wrapper.to_html(markdown_text)
-print("--- HTML Output ---")
-print(html_output)
-
-# Render Pretty AST
-pretty_ast_output = djot_wrapper.render_ast_pretty(markdown_text)
-print("\n--- Pretty AST Output ---")
-print(pretty_ast_output)
-
-# Render JSON AST
-json_ast_output = djot_wrapper.render_ast_json(markdown_text)
-print("\n--- JSON AST Output ---")
-print(json_ast_output)
-
-# Parse Events
-print("\n--- Events Output ---")
-for startpos, endpos, annotation in djot_wrapper.parse_events(markdown_text):
-    print(f"Start: {startpos}, End: {endpos}, Annotation: {annotation}")
-```
+For examples on how to use the `Djot-py` wrapper, please refer to [usage.md](usage.md).
 
 ## Prerequisites
 
