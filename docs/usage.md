@@ -1,5 +1,21 @@
 ## Example Usage
 
+### Using the top-level `djot_to_html` function
+
+For simple conversions, you can use the `djot_to_html` function directly:
+
+```python
+from djot_py import djot_to_html
+
+html_output = djot_to_html("*Hello*, **Djot**!")
+print(html_output)
+# Output: <p><strong>Hello</strong>, <strong><strong>Djot</strong></strong>!</p>\n
+```
+
+### Using the `Djot` class
+
+For more advanced usage, including AST rendering and event parsing, you can instantiate the `Djot` class:
+
 ```python
 from djot_py.wrapper import Djot
 

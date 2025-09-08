@@ -1,9 +1,15 @@
 import pytest
 from djot_py.wrapper import Djot
+from djot_py import djot_to_html
 
 @pytest.fixture(scope="module")
 def djot_wrapper():
     return Djot()
+
+def test_djot_to_html():
+    djot_text = "*Simple* text."
+    expected_html = "<p><strong>Simple</strong> text.</p>\n"
+    assert djot_to_html(djot_text) == expected_html
 
 def test_to_html(djot_wrapper):
     djot_text = "*Hello*, **Djot**!"

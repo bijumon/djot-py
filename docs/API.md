@@ -1,3 +1,12 @@
+## Top-Level Functions
+
+### `djot_to_html(text: str) -> str`
+
+Converts Djot text to HTML using the `Djot-py` wrapper. This is a convenience function for simple conversions, internally utilizing the `Djot` class.
+
+-   **`text`**: The Djot formatted string to convert.
+-   **Returns**: The HTML representation of the input Djot text.
+
 ## Djot Class API
 
 The `Djot` class is the primary interface for interacting with `djot.lua`. It provides the following methods:
