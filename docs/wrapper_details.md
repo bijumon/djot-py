@@ -58,3 +58,17 @@ To update the `djot.lua` library used by the `Djot-py` wrapper, follow these ste
     pytest
     ```
     If all tests pass, your `Djot-py` wrapper is successfully updated to use the new `djot.lua` version.
+
+## TODO
+
+Here are some potential improvements and future work for the `Djot-py` wrapper:
+
+-   **More Comprehensive Testing:** Expand unit tests with more edge cases, and add integration tests for the CLI.
+-   **Performance Benchmarking:** Add benchmarks to measure the performance of the wrapper for various input sizes.
+-   **Expose `djot.lua` Options/Extensions:** Investigate how to expose `djot.lua`'s options (e.g., for HTML rendering, parsing behavior, custom filters) through the Python API.
+-   **Asynchronous API:** Consider adding asynchronous versions of the methods if `lupa` supports it and there's a performance benefit.
+-   **Type Hinting:** Ensure all methods have comprehensive type hints for better code clarity and static analysis.
+-   **Packaging and Distribution:** Finalize metadata in `pyproject.toml` and prepare for PyPI distribution.
+-   **CI/CD Pipeline:** Set up automated testing and building using a platform like GitHub Actions.
+-   **CLI Enhancements:** Add more features to the CLI, such as options for output files, custom configurations, and more detailed error reporting.
+-   **Error Handling Refinement:** Map specific Lua errors to more granular Python exceptions for better error handling by consumers of the library.
