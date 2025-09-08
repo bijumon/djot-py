@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling>=1.5.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "djot-py"
+version = "0.0.1"
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/your-username/djot-py"
+"Bug Tracker" = "https://github.com/your-username/djot-py/issues"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.github",
+    "/.vscode",
+    "/docs",
+    "/tests",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/djot_py"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
